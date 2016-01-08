@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<TimeTableMaker>
+	<InsertLectureInfo>
+		INSERT INTO lectureinfo(lectureCode,lectureName,credit,day,startTime,finishTime,abeek,profName,major,lectureRoom,lectureID,grade) VALUES(?,?,?,?,?,?,?,?,?,?,?,?);
+	</InsertLectureInfo>
+
+	<selectLectureInfoByMajor>
+		SELECT * FROM lectureinfo WHERE major = ?
+	</selectLectureInfoByMajor>
+
+	<selectLectureInfoByGradeMajor>
+		SELECT * FROM lectureinfo WHERE major = ? AND grade = ?
+	</selectLectureInfoByGradeMajor>
+
+	<urlInfo>
+		jdbc:mysql://localhost:3306/test
+	</urlInfo>
+
+	<userInfo>
+		root
+	</userInfo>
+
+	<passwordInfo>
+		1234
+	</passwordInfo>
+	
+	<csvPath>
+		C:/Users/Nightmare/Desktop/doc/2015_TimeTable.csv
+	</csvPath>
+
+	<insertUserInfo>
+		INSERT INTO userInfo(userID,userPasswd,userMajor) VALUES(?,?,?)
+	</insertUserInfo>
+		
+</TimeTableMaker>

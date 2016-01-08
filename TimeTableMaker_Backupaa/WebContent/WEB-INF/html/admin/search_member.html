@@ -1,0 +1,111 @@
+
+
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title> Search Member </title>
+	<script type="text/javascript">
+		
+	/*
+		function getXMLHttpRequest() {
+			
+			// 망할 인터넷 익스플로러라면,
+			if( window.ActiveXObject ) {
+				try {
+					// 익스플로러 상위버전이라면 Msxml2.XMLHTTP를 리턴한다
+					return new ActiveXObject("Msxml2.XMLHTTP");
+				} catch(exp) {
+					try {
+						// 익스플로러 하위버전이라면 Microsoft.XMLHTTP를 리턴한다
+						return new ActiveXObject("Microsoft.XMLHTTP");'
+					}
+				}
+			}
+			
+			// 기타 버전의 브라우저라면 XMLHttpRequest()를 리턴한다
+			else if( window.XMLHttpRequest ) {
+				return new XMLHttpRequest();
+			}
+			else {
+				return null;
+			}
+		}
+	*/
+		
+		function pressSubmitButton() {
+			
+			// XMLHttpRequest 통신을 만든다
+		//	var request = getXMLHttpRequest();
+			//req.open('GET','http://localhost:8080/TimeTableMaker_Backup/searchMember.do',true);
+			
+		//	var paramName = "userID";
+			var paramValue = document.getElementById("member_id");
+			
+			
+		}
+		
+		/*
+		
+		// GET 방식으로 URL 호출
+		function callGetURL() {
+			var url = "http://localhost:8080/TimeTableMaker_Backup/searchMember.do"
+			var paramValue = Document.getElementById("member_id");
+			var param = "userID";
+			
+			if( paramValue == null ) {
+				alert("조회할 멤버의 아이디를 입력해 주세요");
+				
+				return null;
+			}
+			
+			// 브라우저마다 다 다른가보다.. 익스플로러 개객기
+			g_http = getXMLHttpRequest();
+		}
+		
+		function callbackGet() {
+			if( g_http.readyState == 4 && g_http.status == 200 ) {
+				var result = g_http.responseText;
+			}
+		}
+		
+		function addTableRow(var parsedJson) {
+			var userID = parsedJson.userID;
+			var userPasswd = parsedJson.userPasswd;
+			var selecLecture = parsedJson.selectLecture;
+			var excptLecture = parsedJson.exceptLecture;
+			
+			var resultTable = document.getElementById("result_table");
+			var tr = document.createElement("tr");
+			
+			for(int i=0; i<4; i++) {
+				var th = document.createElement("th");
+				th.innerText = 
+			}
+		}
+		*/
+	</script>
+</head>
+
+<body>
+	<h1 align="center"> 멤버 조회 </h1>
+	<h4 align="center"> 아이디를 통해 멤버를 조회합니다</h4>
+	
+	<div id="search_area">
+		I D : <input type="text" id="member_id"> &nbsp;&nbsp;
+		<input type="button" value="조회" onclick="pressSubmitButton()">
+	</div>
+	
+	<br><br><br><br><br>
+	
+	<div id="result_area">
+		<table border="1" width="250" id="result_table">
+			<tr>
+				<th> I D </th>
+				<th> 전 공 </th>
+				<th> 최근 선택한 과목 </th>
+				<th> 최근 제외한 과목 </th>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

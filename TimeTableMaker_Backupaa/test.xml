@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<TimeTableMaker>
+	<InsertLectureInfo>
+		INSERT INTO lectureinfo(lectureCode,lectureName,credit,day,startTime,finishTime,abeek,profName,major,lectureRoom,lectureID) VALUES(?,?,?,?,?,?,?,?,?,?,?);
+	</InsertLectureInfo>
+
+	<selectLectureInfoByMajor>
+		SELECT * FROM lectureinfo WHERE major = ?
+	</selectLectureInfoByMajor>
+
+	<urlInfo>
+		jdbc:mysql://localhost:3306/test
+	</urlInfo>
+
+	<userInfo>
+		root
+	</userInfo>
+
+	<passwordInfo>
+		1234
+	</passwordInfo>
+	
+	<csvPath>
+		C:/2015_TimeTable.csv
+	</csvPath>
+		
+</TimeTableMaker>
